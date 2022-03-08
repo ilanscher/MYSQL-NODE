@@ -175,9 +175,10 @@
     <form autocomplete="off" action="/action_page.php" autofocus>
       <div class="autocomplete" style="width: 300px; margin-top: 20px">
         <label class="container" id="checkBoxID">
-          <input type="checkbox" checked="checked" />
+          <input type="checkbox" />
           <span class="checkmark"></span>
         </label>
+        <span>Click to disable delete option</span>
         <input
           id="myInput"
           type="text"
@@ -252,11 +253,11 @@
     $(function () {
       $("#checkBoxID").on("click", function () {
         if ($("#checkBoxID > input[type=checkbox]").is(":checked")) {
-          $("#divColors > div > button").removeAttr("disabled");
-          $("#divColors > div > button").css("background-color", "#337ab7");
-        } else {
           $("#divColors > div > button").attr("disabled", "disabled");
           $("#divColors > div > button").css("background-color", "#d1d1d1cf");
+        } else {
+          $("#divColors > div > button").removeAttr("disabled");
+          $("#divColors > div > button").css("background-color", "#337ab7");
         }
       });
     });
